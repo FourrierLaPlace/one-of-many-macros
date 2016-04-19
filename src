@@ -1,16 +1,6 @@
-Attribute VB_Name = "NewMacros"
 
-Sub Font()
-Attribute Font.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.Macro1"
-'
-' Macro1 Macro
-'
-'
-    Selection.WholeStory
-    Selection.Font.Name = "Times New Roman"
-End Sub
 Sub Macro1()
-Attribute Macro1.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.Macro1"
+
 '
 ' Macro1 Macro
 '
@@ -28,13 +18,8 @@ Attribute Macro1.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.Macro1"
         .SetCount NumColumns:=2
         .EvenlySpaced = True
         .LineBetween = False
-        .Width = InchesToPoints(3.5)
-        .Spacing = InchesToPoints(0.24)
+        .Spacing = InchesToPoints(0.23)
     End With
-    Application.Templates( _
-        "C:\Users\xiaoc\AppData\Roaming\Microsoft\Document Building Blocks\1033\16\Built-In Building Blocks.dotx" _
-        ).BuildingBlockEntries("Bibliography").Insert Where:=Selection.Range, _
-        RichText:=True
     With Selection.PageSetup
         .LineNumbering.Active = False
         .Orientation = wdOrientPortrait
@@ -95,5 +80,8 @@ Attribute Macro1.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.Macro1"
         .AddSpaceBetweenFarEastAndAlpha = True
         .AddSpaceBetweenFarEastAndDigit = True
         .BaseLineAlignment = wdBaselineAlignAuto
+        Selection.ParagraphFormat.Alignment = wdAlignParagraphJustify
     End With
 End Sub
+
+
